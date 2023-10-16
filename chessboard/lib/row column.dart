@@ -13,7 +13,7 @@ class _RowcolumnState extends State<Rowcolumn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white38,
       appBar: AppBar(backgroundColor: Colors.deepOrange,shape:RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom:Radius.circular(100))),title: Center(child: Text("CHESS BOARD"))),
        body:
       Column(
