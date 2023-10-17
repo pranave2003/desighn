@@ -9,6 +9,7 @@ class Pranav extends StatefulWidget {
 }
 
 class _PranavState extends State<Pranav> {
+  var user= TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,16 +21,31 @@ class _PranavState extends State<Pranav> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.center,children: [Container(height: 50,width: 300,child: Text("sign in"),)],)
-         , Row(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 50,
+                width: 300,
+                child: Text("sign in"),
+              )
+            ],
+          ),
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 height: 50,
                 width: 300,
                 color: Colors.white,
-                child: TextFormField(
-                    decoration: InputDecoration(border: OutlineInputBorder(),hintText: "name or email",)),
+                child: TextFormField(controller: user,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "name or email",
+                        icon: Icon(
+                          Icons.account_box_rounded,
+                          size: 25,
+                        ))),
               )
             ],
           ),
@@ -38,37 +54,51 @@ class _PranavState extends State<Pranav> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
                 Container(
                     height: 50,
                     width: 300,
                     color: Colors.white,
                     child: TextFormField(
-                      decoration: InputDecoration(border: OutlineInputBorder(),hintText: "password"),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: "password",
+                          icon: Icon(
+                            Icons.key,
+                            size: 25,
+                          )),
                     )),
               ],
             ),
-
-
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.center,children: [Container(height: 50,width: 300,child: Text("forgot password?"),)],),
-
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 50,
+                width: 300,
+                child: Text("forgot password?"),
+              )
+            ],
+          ),
 
           Center(
               child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(onPressed: () {print("clicked");}, child: (Text("sign in"))),
+              ElevatedButton(
+                  onPressed: () {
+                    print("clicked");
+                  },
+                  child: (Text("sign in"))),
             ],
           )),
           //Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //children: [
-              //TextButton(onPressed: (){print("click");}, child: Text("log in")),
-            //],
+          //children: [
+          //TextButton(onPressed: (){print("click");}, child: Text("log in")),
+          //],
           //),
-          Row( )
+          Row()
           // TextButton.icon(onPressed: (){}, icon:, label:)
-
         ],
       ),
     );
