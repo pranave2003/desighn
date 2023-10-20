@@ -39,12 +39,25 @@ class _WorkvState extends State<Workv> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Container(
-                                  height: 60,
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      color: Colors.indigoAccent)),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 60,
+                                        width: 60,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            image: DecorationImage(
+                                                image: NetworkImage(
+                                                    "https://thumbs.dreamstime.com/b/happy-office-worker-eyeglasses-working"
+                                                    "-online-wearing-writing-laptop-132561399.jpg"),
+                                                fit: BoxFit.fill)),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
                               Container(
                                   height: 60,
                                   width: 80,
@@ -86,7 +99,7 @@ class _WorkvState extends State<Workv> {
                               padding: const EdgeInsets.all(15.0),
                               child: Icon(
                                 Icons.star,
-                                color: Colors.red,
+                                color: Colors.black,
                               ),
                             ),
                             Text(
@@ -130,14 +143,17 @@ class _WorkvState extends State<Workv> {
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
                                                       10.0),
-                                                  child: Text("Search"),
+                                                  child: TextFormField(
+                                                      decoration:
+                                                          InputDecoration(
+                                                              hintText:
+                                                                  "search")),
                                                 )),
                                             Container(
-                                              height: 40,
-                                              width: 40,
-                                              color: Colors.white,
-                                              child: Icon(Icons.search),
-                                            )
+                                                height: 40,
+                                                width: 40,
+                                                color: Colors.white,
+                                                child: Icon(Icons.search))
                                           ],
                                         ),
                                       ),
@@ -163,18 +179,24 @@ class _WorkvState extends State<Workv> {
                               Container(
                                 height: 50,
                                 width: 200,
-                                color: Colors.yellow[100],child: Padding(
+                                color: Colors.yellow[100],
+                                child: Padding(
                                   padding: const EdgeInsets.all(10.0),
-                                  child: Text("Last connections",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800)),
+                                  child: Text("Last connections",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800)),
                                 ),
                               ),
                               SizedBox(width: 92),
                               Container(
                                 height: 50,
                                 width: 80,
-                                color: Colors.yellow[100],child: Padding(
+                                color: Colors.yellow[100],
+                                child: Padding(
                                   padding: const EdgeInsets.all(10.0),
-                                  child: Text("see all",style: TextStyle(fontSize: 15)),
+                                  child: Text("see all",
+                                      style: TextStyle(fontSize: 15)),
                                 ),
                               )
                             ],
@@ -182,50 +204,62 @@ class _WorkvState extends State<Workv> {
                           Expanded(
                               child: Container(
                             width: double.infinity,
-                            color: Colors.green,
+                            color: Colors.yellow[100],
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(left: 15),
                                   child: Container(
-                                      height: 50,
-                                      width: 50,
+                                      height: 60,
+                                      width: 60,
                                       decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                          color: Colors.indigoAccent)),
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                  "https://thumbs.dreamstime.com/b/african-office-worker-portrait-handsome-male-talking-phone-44341693.jpg"),
+                                              fit: BoxFit.fill))),
                                 ),
                                 Container(
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                        BorderRadius.circular(30),
-                                        color: Colors.indigoAccent)),
+                                  height: 60,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            "https://img.freepik.com/premium-photo/portrait-young-man-sitting-his-desk-office_484651-5103.jpg"),
+                                        fit: BoxFit.fill),
+                                  ),
+                                ),
                                 Container(
-                                    height: 50,
-                                    width: 50,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
-                                        borderRadius:
-                                        BorderRadius.circular(30),
-                                        color: Colors.indigoAccent)),
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                                "https://img.freepik.com/free-photo/young-business-man-talking-phone-working-computer_1303-25412.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1697068800&semt=ais"),
+                                            fit: BoxFit.fill))),
                                 Container(
-                                    height: 50,
-                                    width: 50,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
-                                        borderRadius:
-                                        BorderRadius.circular(30),
-                                        color: Colors.indigoAccent)),
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                                "https://thumbs.dreamstime.com/b/office-worker-pretty-young-sitting-41462649.jpg"),
+                                            fit: BoxFit.fill))),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 15),
-                                  child:  Container(
-                                      height: 50,
-                                      width: 50,
+                                  child: Container(
+                                      height: 60,
+                                      width: 60,
                                       decoration: BoxDecoration(
-                                          borderRadius:
-                                          BorderRadius.circular(30),
-                                          color: Colors.indigoAccent)),
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                  "https://img.freepik.com/free-photo/smiling-young-man-working-laptop-home_1262-5738.jpg"),
+                                              fit: BoxFit.fill))),
                                 ),
                               ],
                             ),
@@ -278,24 +312,122 @@ class _WorkvState extends State<Workv> {
                                 )),
 
                             Expanded(
-                              child: Container(
-                                width: double.infinity,
-                                height: 50,
-                                color: Colors.cyan,
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.white,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height: 108,
+                                            width: 350,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                border: Border.all()),
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10),
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Text("Numero  10",
+                                                          style: TextStyle(
+                                                              fontSize: 15)),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(10),
+                                                        child: Text("4h"),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        "Blog and social post",
+                                                        style: TextStyle(
+                                                            fontSize: 20,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w900),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding: const EdgeInsets.all(1.0),
+                                                        child: Icon(Icons.explore),
+                                                      ),
+                                                      Text(
+                                                        "Dead line is today",
+                                                        style: TextStyle(
+                                                            fontSize: 15),
+                                                      )
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 2,
+                                        ),
+                                        Container(
+                                          height: 70,
+                                          width: 350,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              border: Border.all()),
+                                          child: Column(
+                                            children: [
+                                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Padding(
+                                                    padding: const EdgeInsets.only(left: 10,right: 10),
+                                                    child: Text("Grade Aroma"),
+                                                  ),
+                                                  Padding(
+                                                    padding: const EdgeInsets.only(right: 10),
+                                                    child: Text("7d"),
+                                                  )
+                                                ],
+                                              ),
+                                             Row(children: [ Padding(
+                                               padding: const EdgeInsets.only(left: 10),
+                                               child: Text("New capmain review",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w900),),
+                                             )],)
+                                            ],
+                                          ),
+                                          //decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.red),
+                                        )
+                                        // Container(height: 20,width: 40,color: Colors.red,)
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             // 😂😂😂😂😂😂7
-                            Expanded(
-                              child: Container(
-                                width: double.infinity,
-                                height: 50,
-                                color: Colors.red,
-                              ),
-                            ),
+                            // Expanded(
+                            //   child: Container(
+                            //     width: double.infinity,
+                            //     height: 50,
+                            //     color: Colors.red,
+                            //   ),
+                            // ),
                             // 😊😊😊😊😊😊😊😊😊8
                             Container(
                               width: double.infinity,
-                              height: 90,
+                              height: 60,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.white),
