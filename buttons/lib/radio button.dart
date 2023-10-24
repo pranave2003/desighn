@@ -9,59 +9,42 @@ class Radiodd extends StatefulWidget {
 }
 
 class _RadioddState extends State<Radiodd> {
-  String gender = "male";
+  String gender = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.red),
-      body: Row(children: [
-        Expanded(
-          child: Container(
-            child: RadioListTile(
-                title: Container(
-                    height: 50,
-                    width: 70,
-                  color: Colors.purple,
-                  child: Text("male"),
-
-                    ),
-                value: "male",
-                groupValue: gender,
-                onChanged: (value) {
-                  setState(() {
-                    gender = value.toString();
-                  });
-                }),
-          ),
-        ),
-        Expanded(
-          child: Container(width: 40,color: Colors.green,
-            child: RadioListTile(
-                title: Text("female",style: TextStyle(fontSize: 10,fontWeight: FontWeight.w900)),
-                value: "female",
-                groupValue: gender,
-                onChanged: (value) {
-                  setState(() {
-                    gender = value.toString();
-                  });
-                }),
-          ),
-        ),
-        Expanded(
-          child: Container(width: 40,color: Colors.red,
-            child: RadioListTile(
-                title: Text("other"),
-                value: "other",
-                groupValue: gender,
-                onChanged: (value) {
-                  setState(() {
-                    gender = value.toString();
-                  });
-                }),
-          ),
-        )
+      appBar: AppBar(backgroundColor: Colors.green),
+      body: Column(children: [
+        RadioListTile(
+            title: Text("Male"),
+            value: "male",
+            groupValue: gender,
+            onChanged: (value) {
+              setState(() {
+                gender = value.toString();
+              });
+            }),
+        RadioListTile(
+            title: Text("Female",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w900)),
+            value: "female",
+            groupValue: gender,
+            onChanged: (value) {
+              setState(() {
+                gender = value.toString();
+              });
+            }),
+        RadioListTile(
+            title: Text("Others"),
+            value: "other",
+            groupValue: gender,
+            onChanged: (value) {
+              setState(() {
+                gender = value.toString();
+              });
+            })
       ]),
+
     );
   }
 }
