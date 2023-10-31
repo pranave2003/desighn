@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'bag.dart';
+
 class Bbag extends StatefulWidget {
   const Bbag({super.key});
 
@@ -230,7 +232,11 @@ class _BbagState extends State<Bbag> {
                                 children: [
                                   Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back,size: 30,color: Colors.black45,))
+                                      child: IconButton(onPressed: (){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                          return Bags();
+                                        },));
+                                      }, icon:Icon(Icons.arrow_back,size: 30,color: Colors.black45,))
                                   ),
                                   SizedBox(width: 200),
                                   Padding(

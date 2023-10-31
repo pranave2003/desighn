@@ -1,5 +1,8 @@
+import 'package:buttons/A%20bag.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'B bag.dart';
 
 class Bags extends StatefulWidget {
   const Bags({super.key});
@@ -43,23 +46,24 @@ class _BagsState extends State<Bags> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: Icon(Icons.arrow_back, size: 30,color: Colors.black45),
+                                        child: Icon(Icons.arrow_back,
+                                            size: 30, color: Colors.black45),
                                       ),
                                       SizedBox(width: 250),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: Icon(Icons.search, size: 30,color: Colors.black45),
+                                        child: Icon(Icons.search,
+                                            size: 30, color: Colors.black45),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Icon(
                                             Icons.shopping_cart_outlined,
-                                            size: 30,color: Colors.black45),
+                                            size: 30,
+                                            color: Colors.black45),
                                       )
                                     ],
-                                  )
-                              )
-                          )
+                                  )))
                         ],
                       ),
                       Row(
@@ -147,7 +151,11 @@ class _BagsState extends State<Bags> {
                               child: Container(
                                   height: 180,
                                   width: 170,
-                                  decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://m.media-amazon.com/images/I/71VaQnx7erL._AC_UY1000_.jpg"),fit: BoxFit.fill),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              "https://m.media-amazon.com/images/I/71VaQnx7erL._AC_UY1000_.jpg"),
+                                          fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(15),
                                       color: Colors.grey)),
                             ),
@@ -157,13 +165,21 @@ class _BagsState extends State<Bags> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Column(
-                              children: [Text("office code",style: TextStyle(color: Colors.grey)), Text(" RS.234 ")],
+                              children: [
+                                Text("office code",
+                                    style: TextStyle(color: Colors.grey)),
+                                Text(" RS.234 ")
+                              ],
                             ),
                             SizedBox(
                               width: 50,
                             ),
                             Column(
-                              children: [Text("Leather bag",style: TextStyle(color: Colors.grey)), Text("RS.333")],
+                              children: [
+                                Text("Leather bag",
+                                    style: TextStyle(color: Colors.grey)),
+                                Text("RS.333")
+                              ],
                             )
                           ],
                         ),
@@ -175,8 +191,12 @@ class _BagsState extends State<Bags> {
                               child: Container(
                                   height: 180,
                                   width: 170,
-                                  decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://img.joomcdn.net/f3fa0185388f1704c676b76231447acef3526882_original.jpeg"),fit: BoxFit.fill)
-                                     , borderRadius: BorderRadius.circular(15),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              "https://img.joomcdn.net/f3fa0185388f1704c676b76231447acef3526882_original.jpeg"),
+                                          fit: BoxFit.fill),
+                                      borderRadius: BorderRadius.circular(15),
                                       color: Colors.yellow)),
                             ),
                             Padding(
@@ -184,7 +204,11 @@ class _BagsState extends State<Bags> {
                               child: Container(
                                   height: 180,
                                   width: 170,
-                                  decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://rukminim2.flixcart.com/image/850/1000/xif0q/hand-messenger-bag/c/1/e/-original-imagrtbs4hhgr9hj.jpeg?q=90"),fit: BoxFit.fill),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              "https://rukminim2.flixcart.com/image/850/1000/xif0q/hand-messenger-bag/c/1/e/-original-imagrtbs4hhgr9hj.jpeg?q=90"),
+                                          fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(15),
                                       color: Colors.pinkAccent)),
                             ),
@@ -194,13 +218,28 @@ class _BagsState extends State<Bags> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Column(
-                              children: [Text("Browm mode",style: TextStyle( color: Colors.grey)), Text(" RS.599")],
+                              children: [
+                                TextButton(
+                                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return Abag();
+                                    },));
+                                    },
+                                    child: Text(
+                                      "Combo leather bag",
+                                      style: TextStyle(color: Colors.grey),
+                                    )),
+                                Text(" RS.599")
+                              ],
                             ),
                             SizedBox(
                               width: 50,
                             ),
                             Column(
-                              children: [Text("black shad",style: TextStyle(color: Colors.grey)), Text("RS.499")],
+                              children: [
+                                Text("black shad",
+                                    style: TextStyle(color: Colors.grey)),
+                                Text("RS.499")
+                              ],
                             )
                           ],
                         ),
@@ -209,19 +248,29 @@ class _BagsState extends State<Bags> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                  height: 180,
-                                  width: 170,
-                                  decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://img.freepik.com/premium-photo/blue-leather-handbag-with-gold-clasps-front_761285-993.jpg"),fit: BoxFit.fill),
-                                      borderRadius: BorderRadius.circular(15),
-                                      color: Colors.orange)),
+                              child: InkWell(
+                                child: Container(
+                                    height: 180,
+                                    width: 170,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                                "https://img.freepik.com/premium-photo/blue-leather-handbag-with-gold-clasps-front_761285-993.jpg"),
+                                            fit: BoxFit.fill),
+                                        borderRadius: BorderRadius.circular(15),
+                                        color: Colors.orange)),
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Container(
                                   height: 180,
                                   width: 170,
-                                  decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://img.freepik.com/premium-photo/beautiful-elegant-luxury-fashion-leather-red-women-handbag-isolated-red-background-3d-render_407474-4607.jpg"),fit: BoxFit.fill),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              "https://img.freepik.com/premium-photo/beautiful-elegant-luxury-fashion-leather-red-women-handbag-isolated-red-background-3d-render_407474-4607.jpg"),
+                                          fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(15),
                                       color: Colors.blue)),
                             ),
@@ -231,13 +280,32 @@ class _BagsState extends State<Bags> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Column(
-                              children: [Text("office code",style: TextStyle(color: Colors.grey)), Text(" RS.234 ")],
+                              children: [
+                                TextButton(
+                                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return Bbag();
+                                    },));},
+                                    child: Text(
+                                      "Belt bag",
+                                      style: TextStyle(color: Colors.grey),
+                                    )),
+                                Text(" RS.499 ")
+                              ],
                             ),
+
+
+
+
+
                             SizedBox(
                               width: 50,
                             ),
                             Column(
-                              children: [Text("Leaher bag",style: TextStyle(color: Colors.grey)), Text("RS.455")],
+                              children: [
+                                Text("Leaher bag",
+                                    style: TextStyle(color: Colors.grey)),
+                                Text("RS.455")
+                              ],
                             )
                           ],
                         ),

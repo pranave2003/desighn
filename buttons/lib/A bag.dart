@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'bag.dart';
+
 class Abag extends StatefulWidget {
   const Abag({super.key});
 
@@ -230,7 +232,9 @@ class _AbagState extends State<Abag> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back,size: 30,color: Colors.black45,))
+                                    child: IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return Bags();
+                                    },));}, icon:Icon(Icons.arrow_back,size: 30,color: Colors.black45,))
                                   ),
                                   SizedBox(width: 200),
                                   Padding(
@@ -251,7 +255,7 @@ class _AbagState extends State<Abag> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 10),
-                            child: Text("Aristrocatic Hand Bag",
+                            child: Text("Brown shad",
                                 style: TextStyle(fontSize: 20)),
                           )
                         ],
@@ -260,7 +264,7 @@ class _AbagState extends State<Abag> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 12),
-                            child: Text("Belt Bag",
+                            child: Text("Combo leather bags",
                                 style: TextStyle(
                                     fontSize: 30, fontWeight: FontWeight.w500)),
                           )
@@ -283,7 +287,7 @@ class _AbagState extends State<Abag> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 12),
-                            child: Text("Rs.299",
+                            child: Text("Rs.599",
                                 style: TextStyle(
                                     fontSize: 25, fontWeight: FontWeight.w500)),
                           )
