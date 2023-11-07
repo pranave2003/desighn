@@ -2,7 +2,6 @@ import 'package:buttons/A%20bag.dart';
 import 'package:buttons/B%20bag.dart';
 import 'package:flutter/material.dart';
 
-
 import 'dropdown.dart';
 
 class MyNavigationBar extends StatefulWidget {
@@ -13,16 +12,12 @@ class MyNavigationBar extends StatefulWidget {
 }
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
-
   int _selectedIndex = 0;
-
-
 
   static const List<dynamic> _widgetOptions = [
     Text('My home page',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-   Abag(),
-
+    Abag(),
     Bbag()
   ];
 
@@ -52,7 +47,6 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 icon: Icon(Icons.badge),
                 label: 'Bbag',
                 backgroundColor: Colors.blue),
-
           ],
           type: BottomNavigationBarType.shifting,
           currentIndex: _selectedIndex,
