@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Aabag.dart';
 
@@ -12,10 +13,27 @@ class Validations extends StatefulWidget {
 
 class _ValidationsState extends State<Validations> {
   final formkey = GlobalKey<FormState>();
-  var mobile = TextEditingController();
-  var username = TextEditingController();
-  var email = TextEditingController();
-  var Password = TextEditingController();
+  var mob = TextEditingController();
+  var name = TextEditingController();
+  var mail = TextEditingController();
+  var pass = TextEditingController();
+
+  Future<void> reg() async {
+    final spr = await SharedPreferences.getInstance();
+    spr.setString("Username", name.text);
+    spr.setString("mobile", mob.text);
+    spr.setString("mail", mail.text);
+    spr.setString("pass", pass.text);
+    var username = spr.getString("name");
+    print(name);
+    var mobile = spr.getString("mobile");
+    print(mobile);
+    var email = spr.getString("email");
+    print(mail);
+    var Password = spr.getString("Password");
+    print(pass);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +43,7 @@ class _ValidationsState extends State<Validations> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextFormField(
-                    controller: mobile,
+                    controller: mob,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'empty file';
@@ -36,7 +54,7 @@ class _ValidationsState extends State<Validations> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)))),
                 TextFormField(
-                    controller: username,
+                    controller: name,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'empty file';
@@ -47,7 +65,7 @@ class _ValidationsState extends State<Validations> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)))),
                 TextFormField(
-                    controller: email,
+                    controller: mail,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'empty file';
@@ -58,7 +76,7 @@ class _ValidationsState extends State<Validations> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)))),
                 TextFormField(
-                    controller: Password,
+                    controller: pass,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'empty file';
@@ -84,13 +102,13 @@ class _ValidationsState extends State<Validations> {
                                 actions: [
                                   TextButton(
                                       onPressed: () {
+                                        reg();
                                         Navigator.of(context).pop();
                                       },
                                       child: Text("ok"))
                                 ],
                               );
                             });
-
                       }
                     },
                     child: const Text("login"))

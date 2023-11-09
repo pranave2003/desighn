@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Cart.dart';
+import 'Green chairr.dart';
+
 class Chairsss extends StatefulWidget {
   const Chairsss({super.key});
 
@@ -18,7 +21,7 @@ class _ChairsssState extends State<Chairsss> {
             children: [
               Expanded(
                 child: Container(
-                  color: Colors.grey.shade200,
+                  color: Colors.white,
                   child: Column(
                     children: [
                       Row(
@@ -52,7 +55,12 @@ class _ChairsssState extends State<Chairsss> {
                           Container(
                             height: 50,
                             width: 300,
-                            decoration: BoxDecoration(boxShadow:[ BoxShadow(blurRadius:11,),],
+                            decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 11,
+                                  ),
+                                ],
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white),
                             child: Padding(
@@ -63,13 +71,18 @@ class _ChairsssState extends State<Chairsss> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child:
-                                  Icon(Icons.shopping_cart_outlined, size: 30),
-                            ),
-                          )
+                              padding: const EdgeInsets.only(left: 10),
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return Cartss();
+                                      },
+                                    ));
+                                  },
+                                  icon: Icon(Icons.shopping_cart_outlined)
+                                  // Icon(Icons.shopping_cart_outlined, size: 30),
+                                  ))
                         ],
                       ),
                       Padding(
@@ -97,7 +110,7 @@ class _ChairsssState extends State<Chairsss> {
             children: [
               Expanded(
                 child: Container(
-                  color: Colors.grey.shade200,
+                  color: Colors.white,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
                     Padding(
                       padding: const EdgeInsets.all(20),
@@ -107,6 +120,7 @@ class _ChairsssState extends State<Chairsss> {
                             height: 400,
                             width: 250,
                             decoration: BoxDecoration(
+                                boxShadow: [BoxShadow(blurRadius: 5)],
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white),
                             child: Column(
@@ -117,6 +131,33 @@ class _ChairsssState extends State<Chairsss> {
                                       padding: const EdgeInsets.only(
                                           top: 12, left: 12),
                                       child: Container(
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 180),
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10,
+                                                          bottom: 160),
+                                                  child: Container(
+                                                      child: Icon(
+                                                          CupertinoIcons
+                                                              .heart_fill,
+                                                          color: Colors.white,
+                                                          size: 20),
+                                                      height: 30,
+                                                      width: 30,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(30),
+                                                          color: Colors.red)),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                           height: 220,
                                           width: 225,
                                           decoration: BoxDecoration(
@@ -137,7 +178,7 @@ class _ChairsssState extends State<Chairsss> {
                                   padding: const EdgeInsets.only(left: 20),
                                   child: Row(children: [
                                     Text(
-                                      "Item Name",
+                                      "Green mux chair",
                                       style: TextStyle(fontSize: 25),
                                     )
                                   ]),
@@ -147,8 +188,9 @@ class _ChairsssState extends State<Chairsss> {
                                   child: Row(
                                     children: [
                                       Text(
-                                        "Discription",
-                                        style: TextStyle(fontSize: 20,color: Colors.grey),
+                                        " 10% offer",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.green),
                                       )
                                     ],
                                   ),
@@ -160,8 +202,10 @@ class _ChairsssState extends State<Chairsss> {
                                   padding: const EdgeInsets.only(left: 20),
                                   child: Row(
                                     children: [
-                                      Text("\$250.00",
-                                          style: TextStyle(fontSize: 30,color: Colors.grey)),
+                                      Text("\$299.00",
+                                          style: TextStyle(
+                                              fontSize: 30,
+                                              color: Colors.grey)),
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(left: 60),
@@ -184,9 +228,10 @@ class _ChairsssState extends State<Chairsss> {
                       child: Row(
                         children: [
                           Container(
-                            height: 400,
+                            height: 380,
                             width: 250,
                             decoration: BoxDecoration(
+                              boxShadow: [BoxShadow(blurRadius: 5)],
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
                             ),
@@ -197,17 +242,27 @@ class _ChairsssState extends State<Chairsss> {
                                     Padding(
                                       padding: const EdgeInsets.only(
                                           top: 12, left: 12),
-                                      child: Container(
-                                          height: 220,
-                                          width: 225,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      "assets/Screenshot 2023-11-06 194441.png"),
-                                                  fit: BoxFit.fill),
-                                              color: Colors.blueGrey)),
+                                      child: InkWell(
+                                        onTap: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (context) {
+                                              return Greenchair();
+                                            },
+                                          ));
+                                        },
+                                        child: Container(
+                                            height: 220,
+                                            width: 225,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        "assets/Screenshot 2023-11-06 194441.png"),
+                                                    fit: BoxFit.fill),
+                                                color: Colors.blueGrey)),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -218,8 +273,10 @@ class _ChairsssState extends State<Chairsss> {
                                   padding: const EdgeInsets.only(left: 20),
                                   child: Row(children: [
                                     Text(
-                                      "Item Name",
-                                      style: TextStyle(fontSize: 25,),
+                                      "Green dark chair",
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                      ),
                                     )
                                   ]),
                                 ),
@@ -228,8 +285,9 @@ class _ChairsssState extends State<Chairsss> {
                                   child: Row(
                                     children: [
                                       Text(
-                                        "Discription",
-                                        style: TextStyle(fontSize: 20,color: Colors.grey),
+                                        "coming soon",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.red),
                                       )
                                     ],
                                   ),
@@ -242,7 +300,9 @@ class _ChairsssState extends State<Chairsss> {
                                   child: Row(
                                     children: [
                                       Text("\$250.00",
-                                          style: TextStyle(fontSize: 30,color: Colors.grey)),
+                                          style: TextStyle(
+                                              fontSize: 30,
+                                              color: Colors.grey)),
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(left: 60),
@@ -271,7 +331,7 @@ class _ChairsssState extends State<Chairsss> {
             children: [
               Expanded(
                 child: Container(
-                  color: Colors.grey.shade200,
+                  color: Colors.white,
                   child: Column(
                     children: [
                       Padding(
@@ -307,15 +367,32 @@ class _ChairsssState extends State<Chairsss> {
                                               BorderRadius.circular(20),
                                           color: Colors.blue.shade50)),
                                 ),
-                                Column(
-                                  children: [
-                                    Text("Minimal chair",
-                                        style: TextStyle(fontSize: 25)),
-                                    Text("Blue",
-                                        style: TextStyle(fontSize: 20)),
-                                    Text("\$125",
-                                        style: TextStyle(fontSize: 25)),
-                                  ],
+                                Container(
+                                  height: 100,
+                                  width: 160,
+                                  color: Colors.white,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text("Minimal chair",
+                                              style: TextStyle(fontSize: 25)),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text("Blue",
+                                              style: TextStyle(fontSize: 15)),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text("\$125",
+                                              style: TextStyle(fontSize: 25)),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 Padding(
                                   padding:
@@ -328,6 +405,7 @@ class _ChairsssState extends State<Chairsss> {
                               ],
                             ),
                             decoration: BoxDecoration(
+                                boxShadow: [BoxShadow(blurRadius: 5)],
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white),
                           )

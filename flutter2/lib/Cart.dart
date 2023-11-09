@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Chairrmain.dart';
+
 class Cartss extends StatefulWidget {
   const Cartss({super.key});
 
@@ -31,12 +33,20 @@ class _CartssState extends State<Cartss> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(left: 30),
-                                child: Icon(Icons.arrow_back, size: 30),
+                                child: IconButton(
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) {
+                                          return Chairsss();
+                                        },
+                                      ));
+                                    },
+                                    icon: Icon(Icons.arrow_back)),
                               ),
                               Text("Cart",
                                   style: TextStyle(
                                       fontSize: 25,
-                                      fontWeight: FontWeight.w500)),
+                                      fontWeight: FontWeight.w800)),
                               Padding(
                                 padding: const EdgeInsets.only(right: 30),
                                 child: Icon(Icons.shopping_cart_outlined,
@@ -44,7 +54,10 @@ class _CartssState extends State<Cartss> {
                               )
                             ],
                           ),
-                        ),SizedBox(height: 30,),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Row(
@@ -52,14 +65,15 @@ class _CartssState extends State<Cartss> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
-                                child: Icon(Icons.check_box),
+                                child: Icon(Icons.check_box, color: Colors.red),
                               ),
                               Container(
                                   height: 100,
                                   width: 100,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
-                                          image: AssetImage("assets/Screenshot 2023-11-06 194441.png"),
+                                          image: AssetImage(
+                                              "assets/Screenshot 2023-11-06 194441.png"),
                                           fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(20),
                                       color: Colors.green)),
@@ -86,20 +100,22 @@ class _CartssState extends State<Cartss> {
                                                     fontWeight: FontWeight.w500,
                                                     color: Colors.red)),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Container(
                                                 height: 30,
                                                 width: 80,
                                                 decoration: BoxDecoration(
                                                     borderRadius:
-                                                        BorderRadius.circular(300),
+                                                        BorderRadius.circular(
+                                                            300),
                                                     border: Border.all()),
                                                 child: Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceBetween,
                                                     children: [
-                                                      Icon(Icons.minimize),
+                                                      Icon(Icons.remove),
                                                       Text("1",
                                                           style: TextStyle(
                                                               fontSize: 20)),
@@ -131,7 +147,8 @@ class _CartssState extends State<Cartss> {
                                   width: 100,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
-                                          image: AssetImage("assets/download.jpg"),
+                                          image:
+                                              AssetImage("assets/download.jpg"),
                                           fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(20),
                                       color: Colors.red)),
@@ -158,20 +175,22 @@ class _CartssState extends State<Cartss> {
                                                     fontWeight: FontWeight.w500,
                                                     color: Colors.red)),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Container(
                                                 height: 30,
                                                 width: 80,
                                                 decoration: BoxDecoration(
                                                     borderRadius:
-                                                        BorderRadius.circular(20),
+                                                        BorderRadius.circular(
+                                                            20),
                                                     border: Border.all()),
                                                 child: Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceBetween,
                                                     children: [
-                                                      Icon(Icons.minimize),
+                                                      Icon(Icons.remove),
                                                       Text("1",
                                                           style: TextStyle(
                                                               fontSize: 20)),
@@ -203,7 +222,8 @@ class _CartssState extends State<Cartss> {
                                   width: 100,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
-                                          image: AssetImage("assets/715iLMD9ztS._AC_UF894,1000_QL80_.jpg"),
+                                          image: AssetImage(
+                                              "assets/715iLMD9ztS._AC_UF894,1000_QL80_.jpg"),
                                           fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(20),
                                       color: Colors.orange)),
@@ -230,20 +250,22 @@ class _CartssState extends State<Cartss> {
                                                     fontWeight: FontWeight.w500,
                                                     color: Colors.red)),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Container(
                                                 height: 30,
                                                 width: 80,
                                                 decoration: BoxDecoration(
                                                     borderRadius:
-                                                        BorderRadius.circular(20),
+                                                        BorderRadius.circular(
+                                                            20),
                                                     border: Border.all()),
                                                 child: Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceBetween,
                                                     children: [
-                                                      Icon(Icons.minimize),
+                                                      Icon(Icons.remove),
                                                       Text("1",
                                                           style: TextStyle(
                                                               fontSize: 20)),

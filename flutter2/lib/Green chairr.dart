@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Chairrmain.dart';
+
 class Greenchair extends StatefulWidget {
   const Greenchair({super.key});
 
@@ -214,8 +216,12 @@ class _GreenchairState extends State<Greenchair> {
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20,top: 40),
-                  child: Icon(Icons.arrow_back),
+                  padding: const EdgeInsets.only(left: 10,top: 40),
+                  child: IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context) {
+                    return Chairsss();
+                  },));
+
+                  }, icon: Icon(Icons.arrow_back))
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 40,left: 80),
