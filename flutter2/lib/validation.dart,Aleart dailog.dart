@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Aabag.dart';
+import 'login page.dart';
 
 class Validations extends StatefulWidget {
   const Validations({super.key});
@@ -20,18 +21,21 @@ class _ValidationsState extends State<Validations> {
 
   Future<void> reg() async {
     final spr = await SharedPreferences.getInstance();
-    spr.setString("Username", name.text);
+    spr.setString("Username23", name.text);
     spr.setString("mobile", mob.text);
     spr.setString("mail", mail.text);
-    spr.setString("pass", pass.text);
-    var username = spr.getString("name");
-    print(name);
+    spr.setString("pass23", pass.text);
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return Loginpage();
+    },));
+    var username = spr.getString("Username");
+    print(username);
     var mobile = spr.getString("mobile");
     print(mobile);
-    var email = spr.getString("email");
-    print(mail);
-    var Password = spr.getString("Password");
-    print(pass);
+    var email = spr.getString("mail");
+    print(email);
+    var Password = spr.getString("pass");
+    print(Password);
   }
 
   @override
@@ -92,23 +96,28 @@ class _ValidationsState extends State<Validations> {
                 ElevatedButton(
                     onPressed: () {
                       if (formkey.currentState!.validate()) {
-                        showDialog(
-                            context: context,
-                            builder: (Builder) {
-                              return AlertDialog(
-                                title: Text("Aleart"),
-                                content:
-                                    Text("pleas provide the currect number"),
-                                actions: [
-                                  TextButton(
-                                      onPressed: () {
-                                        reg();
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text("ok"))
-                                ],
-                              );
-                            });
+                        // print(name.text);
+                        // print(mob.text);
+                        // print(mail.text);
+                        // print(pass.text);
+                        // showDialog(
+                        //     context: context,
+                        //     builder: (Builder) {
+                        //       return AlertDialog(
+                        //         title: Text("Aleart"),
+                        //         content:
+                        //             Text("pleas provide the currect number"),
+                        //         actions: [
+                        //           TextButton(
+                        //               onPressed: () {
+                        //                 reg();
+                        //                 Navigator.of(context).pop();
+                        //               },
+                        //               child: Text("ok"))
+                        //         ],
+                        //       );
+                        //     });
+                        reg();
                       }
                     },
                     child: const Text("login"))
