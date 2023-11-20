@@ -21,10 +21,10 @@ class _ValidationsState extends State<Validations> {
 
   Future<void> reg() async {
     final spr = await SharedPreferences.getInstance();
-    spr.setString("Username23", name.text);
+    spr.setString("Username", name.text);
     spr.setString("mobile", mob.text);
     spr.setString("mail", mail.text);
-    spr.setString("pass23", pass.text);
+    spr.setString("pass", pass.text);
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return Loginpage();
     },));
